@@ -32,7 +32,26 @@ header {
     padding: 0 20px;
     align-items: center;
     font-size: 20px;
+    transition: all .3s;
 }
+
+header:hover {
+    background-color: white;
+}
+
+header:hover  a , header:hover select{
+    color: black;
+}
+
+header:hover .logo, header:hover svg {
+    filter: invert(100%);
+}
+
+header ul .option > a {
+    display: flex;
+    height: 80px;
+    align-items: center;
+    }
 
 header .icon {
     width: 30px;
@@ -43,7 +62,7 @@ header .logo {
     width: 150px;
 }
 
-header ul {
+header > ul {
     display: flex;
     gap: 40px;
 }
@@ -54,6 +73,8 @@ header select {
     color: white;
     font-size: 16px;
     width: fit-content;
+    outline: none;
+    cursor: pointer;
 }
 
 header div {
@@ -62,10 +83,44 @@ header div {
     gap: 20px;
 }
 
-
 header svg {
     cursor: pointer;
 }
+
+header .option {
+    position: relative;
+}
+
+header .option:hover::after {
+    position: absolute;
+}
+
+header .option::after {
+    content: "";
+    bottom: 18px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+header .option:hover > .suboptions {
+    display: flex;
+}
+
+header .suboptions {
+    position: absolute;
+    padding: 18px;
+    background-color: white;
+    flex-direction: column;
+    display: none;
+    gap: 20px;
+    width: max-content;
+}
+
+header .suboptions a {
+    color: black;
+}
+
 /*************** Home *****************/
 
 .home {
@@ -147,7 +202,6 @@ header svg {
     justify-content: space-between;
     animation: train infinite 10s linear;
 }
-
 
 /*************** categorias ****************/
 .categorias .box-grid {
@@ -238,10 +292,13 @@ header svg {
     width: 90%;
     margin: auto;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
 .top a { 
     color: black;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .arrivals .slider {
@@ -359,7 +416,7 @@ footer {
 
 footer .cont-info {
     display: flex;
-    gap: 40px;
+    gap: 100px;
 }
 
 footer .info {
@@ -382,6 +439,20 @@ footer .foot ul {
     gap: 10px;
 }
 
+footer .libro {
+    width: 250px;
+}
+
+footer .info:last-child {
+    align-items: center;
+}
+
 footer .foot select {
     border: none;
+}
+
+footer .redes img{
+    margin-left: 30px;
+    width: 22px;
+    height: 22px;
 }

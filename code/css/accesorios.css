@@ -1,0 +1,272 @@
+/********** General ************/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/*************** Header *****************/
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    padding: 0 20px;
+    align-items: center;
+    font-size: 20px;
+    transition: all .3s;
+    background-color: white;
+}
+
+header a , header select{
+    color: black;
+}
+
+header ul .option > a {
+    display: flex;
+    height: 80px;
+    align-items: center;
+}
+
+header .icon {
+    width: 30px;
+    height: 30px;   
+}
+
+header .logo, header svg {
+    width: 150px;
+    filter: invert(100%);
+}
+
+header > ul {
+    display: flex;
+    gap: 40px;
+}
+
+header select {
+    border:none;
+    background-color: transparent;
+    color: black;
+    font-size: 16px;
+    width: fit-content;
+    outline: none;
+    cursor: pointer;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header svg {
+    cursor: pointer;
+}
+
+header .option {
+    position: relative;
+}
+
+header .option:hover::after {
+    position: absolute;
+}
+
+header .option::after {
+    content: "";
+    bottom: 18px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+header .option:hover > .suboptions {
+    display: flex;
+}
+
+header .suboptions {
+    position: absolute;
+    padding: 18px;
+    background-color: white;
+    flex-direction: column;
+    display: none;
+    gap: 20px;
+    width: max-content;
+}
+
+header .suboptions a {
+    color: black;
+}
+
+/************ Marquee **************/
+@keyframes train {
+    100% {
+        transform: translateX(-50%);
+    }
+}
+.cont-marque {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.marque {   
+    width: 200%;
+    background-color: lightcoral;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    animation: train infinite 10s linear;
+    margin-top: 80px;
+    margin-bottom: 40px;
+}
+
+/************* Collecion ***************/
+.coleccion {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.coleccion hr {
+    border: none;
+    border-top: 4px solid black;
+    width: 50px;
+    margin-top: 15px;
+    margin-bottom: 70px;
+}
+
+.coleccion h1 {
+    font-size: 50px;
+}
+
+.coleccion .cont-selects {
+    display: flex;
+    gap: 30px;
+}
+
+.coleccion select {
+    cursor: pointer;
+}
+
+.coleccion .cont-selects div {
+    border: 1px solid black;
+    padding: 10px 30px;
+}
+
+.coleccion select, .coleccion span {
+    border: none;
+    font-size: 18px;
+    font-weight: lighter;
+    outline: none;
+}
+
+.coleccion span {
+    font-weight: bold;
+}
+
+/*********** box-grid ************/
+
+.box-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    row-gap: 40px;
+    width: 90%;
+    margin: auto;
+    padding: 80px 0;
+}
+
+.box-grid img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: top;
+    transition: transform .4s;
+}
+
+.box-grid .card {
+    overflow: hidden;
+}
+
+.box-grid .card:hover img  {
+    transform: scale(1.05);
+}
+
+.box-grid a {
+    color: black;
+}
+
+.box-grid h3 {
+    margin: 8px 0;
+}
+
+/*************** Footer ****************/
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    padding: 40px 5%;
+    padding-top: 0;
+    gap: 50px;
+}
+
+footer .cont-info {
+    display: flex;
+    gap: 100px;
+}
+
+footer .info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+footer .info a {
+    color: black;
+}
+
+footer .foot {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .foot ul {
+    display: flex;
+    gap: 10px;
+}
+
+footer .foot select {
+    border: none;
+}
+
+footer .libro {
+    width: 250px;
+}
+
+footer .info:last-child {
+    align-items: center;
+}
+
+footer .redes img{
+    margin-left: 30px;
+    width: 22px;
+    height: 22px;
+}
