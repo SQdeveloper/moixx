@@ -61,6 +61,10 @@ header > ul {
     gap: 40px;
 }
 
+header .option:nth-child(1)::after{
+    position: absolute;
+}
+
 header select {
     border:none;
     background-color: transparent;
@@ -113,6 +117,69 @@ header .suboptions {
 
 header .suboptions a {
     color: black;
+}
+
+/*********** Menu ***************/
+.menu {
+    display: none;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+}
+
+.menu.active img{
+    filter: none;
+}
+
+.menu img {
+    width: 100%;
+    height: 100%;
+}
+
+header:hover .menu img {
+    filter: none;
+}
+
+.content {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    z-index: 2;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background-color: white;
+    flex-direction: column;
+    align-items: start;
+    padding: 50px 50px;
+    justify-content: space-between;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    overflow-y: scroll;
+}
+
+.content.active {
+    transform: none;
+}
+
+.content a {
+    display: block;
+    font-size: 35px;
+    color: black;
+}
+
+.content ul:first-child li {
+    margin-top: 15px;
+}
+
+.content ul:nth-child(2) {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.content select {
+    color: black;
+    display: block;
 }
 
 /************ Marquee **************/
@@ -269,4 +336,112 @@ footer .redes img{
     margin-left: 30px;
     width: 22px;
     height: 22px;
+}
+
+/**************** Querys *****************/
+@media (max-width: 1280px) {
+    /************ Menu ***************/
+    .menu {
+        display: block;
+    }
+
+    /*********** Header *************/
+    header > ul, header div select, header > div a {
+        display: none;
+    }
+
+    /********** Box-grid ***********/
+    .box-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    /********* Coleccion ************/
+    .coleccion .cont-selects {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0 40px;
+    }
+    /*********** marque ************/
+    .marque {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1000px) {
+    /*********marque **********/
+    .marque span:last-child, .marque span:first-child {
+        display: none;
+    }
+
+    /*************** Footer ****************/
+    footer .cont-info {
+        flex-wrap: wrap;
+    }
+
+    /********* Coleccion ************/
+    .coleccion hr {
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 860px) {
+     /*********marque **********/
+    .marque span:nth-child(4), .marque span:nth-child(5), .marque span:nth-child(6) {
+        display: none;
+    }
+    /********** Box-grid ***********/
+    .box-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+
+    /*********** Footer ************/
+    footer .libro {
+        width: 180px;
+    }
+
+    /********** Box-grid ***********/
+    .box-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    /******* coleccion ******/
+    .coleccion h1 {
+        font-size: 35px;
+    }
+
+    /********* Header ************/
+    header .logo {
+        width: 130px;
+    }
+
+    .content a {
+        font-size: 28px;
+    }
+
+     /******** Marque ************/
+     .marque span:nth-child(8), .marque span:nth-child(9), .marque span:nth-child(10) {
+        display: none;
+    }
+
+    /********** Footer *************/
+    footer .info:last-child {
+        align-items: start;
+    }
+
+    footer .cont-info {
+        gap: 40px;
+    }
+
+    footer .foot {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .foot select {
+        width: fit-content;
+    }
 }

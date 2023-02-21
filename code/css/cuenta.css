@@ -115,6 +115,69 @@ header .suboptions a {
     color: black;
 }
 
+/*********** Menu ***************/
+.menu {
+    display: none;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+}
+
+.menu.active img{
+    filter: none;
+}
+
+.menu img {
+    width: 100%;
+    height: 100%;
+}
+
+header:hover .menu img {
+    filter: none;
+}
+
+.content {
+    position: fixed;
+    left: 0;
+    top: 80px;
+    z-index: 2;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    background-color: white;
+    flex-direction: column;
+    align-items: start;
+    padding: 50px 50px;
+    justify-content: space-between;
+    transform: translateX(-100%);
+    transition: transform .5s;
+    overflow-y: scroll;
+}
+
+.content.active {
+    transform: none;
+}
+
+.content a {
+    display: block;
+    font-size: 35px;
+    color: black;
+}
+
+.content ul:first-child li {
+    margin-top: 15px;
+}
+
+.content ul:nth-child(2) {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.content select {
+    color: black;
+    display: block;
+}
+
 /************ Formulario **************/
 .formulario {
     display: flex;
@@ -152,12 +215,24 @@ form button {
     background-color: black;
     color: white;
     margin: 12px 0;
+    transition: all .4s;
+    border: 1px solid black;
+}
+
+form button:hover {
+    color: black;
+    background-color: white;
 }
 
 form a {
     text-decoration: underline;
     color: #e46b1a;
     font-size: 18px;
+    transition: color .4s;
+}
+
+form a:hover {
+    color: black;
 }
 
 /*************** Footer ****************/
@@ -211,4 +286,78 @@ footer .redes img{
     margin-left: 30px;
     width: 22px;
     height: 22px;
+}
+
+/**************** Querys *****************/
+@media (max-width: 1280px) {
+    /************ Menu ***************/
+    .menu {
+        display: block;
+    }
+
+    /*********** Header *************/
+    header > ul, header div select, header > div a {
+        display: none;
+    }
+}
+
+@media (max-width: 1000px) {
+    /*************** Footer ****************/
+    footer .cont-info {
+        flex-wrap: wrap;
+    }
+
+    /********** formulario ************/
+    form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 860px) {
+    /********** formulario ************/
+    form {
+        width: 70%;
+    }
+}
+
+@media (max-width: 650px) {
+
+    /*********** Footer ************/
+    footer .libro {
+        width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    /********* Header ************/
+    header .logo {
+        width: 130px;
+    }
+
+    .content a {
+        font-size: 28px;
+    }
+
+    /********** formulario ************/
+    form {
+        width: 90%;
+    }
+
+    /********** Footer *************/
+    footer .info:last-child {
+        align-items: start;
+    }
+
+    footer .cont-info {
+        gap: 40px;
+    }
+
+    footer .foot {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    footer .foot select {
+        width: fit-content;
+    }
 }
